@@ -14,6 +14,8 @@ gem 'turbo-rails'
 gem 'tzinfo-data'
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'ffi'
+  gem 'rspec-rails'
 end
 
 group :development do
