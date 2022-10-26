@@ -54,6 +54,12 @@
     border-radius: 15px;
  }
 
+ .post_user_container {
+    display: flex;
+    gap: 10px;
+ }
+
+
  .user_container p,h3 {
     margin: 10px 0;
     color: black;
