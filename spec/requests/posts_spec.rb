@@ -17,7 +17,7 @@ RSpec.describe PostsController, type: :request do
     end
 
     it 'render index should include ' do
-      expect(response.body).to include("List of all Posts by #{subject.id}")
+      expect(response.body).to include("List of all Posts by #{subject.name}")
     end
   end
 

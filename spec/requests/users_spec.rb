@@ -35,7 +35,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'render user with spesific id' do
-      expect(response.body).to include("User Details by #{subject.id}")
+      expect(response.body).to include('User Details')
     end
   end
 end
