@@ -126,4 +126,52 @@
  .comment_holder p,h5 {
     margin: 10px;
  }
+
+ .comment_form {
+   display: flex;
+   flex-direction: column;
+   row-gap: 10px;
+   padding: 15px;
+ }
  
+ .comment_field {
+   background-color: aliceblue;
+   padding: 10px;
+   border: 0px;
+   border-radius: 15px;
+   resize: none;
+ }
+
+ .comment_field :focus-visible {
+   outline: none;
+ }
+
+ .comment_btn {
+   padding: 5px;
+   width: fit-content;
+   background-color: rgb(0, 132, 255);
+   color: white;
+   border: 0;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+
+ .new_post_form {
+   display: flex;
+   flex-direction: column;
+   row-gap: 10px;
+ }
+
+ .post_btn {
+   background-color: rgb(0, 102, 255);
+   color: white;
+   border: 0;
+   cursor: pointer;
+   padding: 10px;
+   transition: all 0.3s ease;
+   border-radius: 10px;
+ }
+
+  .post_btn:hover {
+   background-color: green;
+  }
