@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'renders users Show Page', type: :feature do
   before(:example) do
-    @subject1 = User.create(name: 'Alan Luqman', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from UK.', post_counter: 0) 
+    @subject1 = User.create(name: 'Alan Luqman', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                            bio: 'Teacher from UK.', post_counter: 0)
 
     @post = Post.create(author: @subject1, title: 'demo', text: 'rails testing project')
 
@@ -11,10 +12,10 @@ RSpec.describe 'renders users Show Page', type: :feature do
     Post.create(author: @subject1, title: 'ogaga', text: 'ogaga start new role as web developer')
 
     visit user_path(id: @subject1.id)
-end
+  end
 
   it 'I can see the profile picture for each user.' do
-      find("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
+    find("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
   end
 
   it 'I can see the user username.' do
@@ -45,10 +46,10 @@ end
   end
 
   it 'When I click to see all posts, it redirects me to the user posts index page.' do
-    if @subject1.post_counter > 0 
+    if @subject1.post_counter > 0
       click_on 'See all Posts'
       expect(current_path).to eq "users/#{@subject1.id}/posts"
-    else 
+    else
       expect(page).to have_content('The list is empty for the posts by the user')
     end
   end

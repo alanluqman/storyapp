@@ -16,8 +16,8 @@ gem 'turbo-rails'
 gem 'tzinfo-data'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem "database_cleaner"
   gem 'ffi'
   gem 'rspec-rails'
 end
