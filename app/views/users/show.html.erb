@@ -18,7 +18,7 @@
       <ul>
         <% @user.three_recent_posts.each do |post| %>
             <li class = 'post_container'>
-              <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class = 'user_clickable'>
+              <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class = 'post user_clickable'>
                 <h3>#<%= post[:id] %> <%= post[:title] %> </h3>
                 <p> <%= post[:text] %> </p>
                 <p class = 'post_counter' >Comments:<%= post[:comments_counter] %> Likes: <%= post[:likes_counter] %> </p>
