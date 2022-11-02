@@ -15,7 +15,7 @@
     </div>
      <%= render partial: "create_comments",  local: { post: @post } %>
     <ul>
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.includes(:author).each do |comment| %>
         <li class = 'comment_holder'>
           <h5> <%= comment.author.name%></h5>
           <p><%= comment.text%> </p>

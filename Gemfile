@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'bullet', group: 'development'
 ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
@@ -15,6 +16,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'ffi'
   gem 'rspec-rails'
