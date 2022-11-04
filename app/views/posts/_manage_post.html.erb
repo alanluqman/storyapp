@@ -1,0 +1,9 @@
+<div >
+  <% if can? :update, @post %>
+    <%= link_to "Edit", edit_post_path(@post.id) , class: "see_all_post" %>
+   <% end %> 
+
+  <% if can? :destroy, @post %>
+    <%= button_to "Delete" , @post , method: :delete %>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+
+
+<div >
+ <%  if can? :update, @post %>
+  <%= link_to "Edit", edit_comment_url , class: "see_all_post" %>
+  <% end %>
+
+  <%  if can? :destroy, @post %>
+  <%= link_to "Delete", comment_url , method: :destroy , class: "see_all_post" %>
+<% end %>
+</div>

@@ -1,0 +1,7 @@
+<div class = 'container'>
+<h1 class = 'page_title'>Edit comment</h1>
+<%= form_with model: @comment, class: 'new_post_form', scope: :comments do |form| %>
+  <%= form.text_area :text, value: @comment.text  , placeholder: "Type here...", rows: 14, required: true %>
+  <%= form.submit "Submit comment", class: 'post_btn' %>
+<% end %>
+</div>

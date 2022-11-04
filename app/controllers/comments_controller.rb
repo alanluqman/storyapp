@@ -15,6 +15,33 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+     @comment = Comment.find params[:id]
+    if @comment.update comment_text
+      redirect_to user_post_path(@post.user_id, @post.id), notice: 'Post edited successfully!'
+    else
+      render :new
+    end
+
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
+    @post.comments_counter -= 1
+    if @comment.destroy
+      flash[:notice] = 'Comment deleted!'
+    else
+      flash[:alert] = 'Failed to delete comment!'
+    end
+    redirect_to user_post_path(current_user, @post.id), notice: 'comment deleted successfully!'
+    # redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def comment_text

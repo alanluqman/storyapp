@@ -1,0 +1,8 @@
+<div class = 'container'>
+<h1 class = 'page_title'>Edit a Post</h1>
+<%= form_with model: @post, class: 'new_post_form', scope: :posts do |form| %>
+  <%= form.text_field :title, value: @post.title, placeholder: "Title", required: true%>
+  <%= form.text_area :text, value: @post.text , placeholder: "Type here...", rows: 14, required: true %>
+  <%= form.submit "Update Post", class: 'post_btn' %>
+<% end %>
+</div>

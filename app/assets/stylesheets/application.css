@@ -192,3 +192,16 @@
    align-self: center;
    text-align: center;
   }
+
+  .nav_bar {
+   padding: 5px;
+   background-color: rgba(0, 0, 0, 0.623);
+   color: white;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+  }
+
+  .loggedin_user_name {
+   margin: 0;
+  }

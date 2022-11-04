@@ -1,4 +1,5 @@
 <div class = 'container'>
+<%= render 'nav'%>
   <h1 class = 'page_title'>Post Details</h1>
   <div class = 'post_container'> 
     <div class = 'post_user_container'>
@@ -7,6 +8,7 @@
     </div>
     <h3><%= @post.title %></h3>
     <p><%= @post.text %></p>
+    <%= render "manage_post" %>
     <div class = 'post_counter'>
       <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
         <%= form.submit "Like" %>
@@ -19,6 +21,7 @@
         <li class = 'comment_holder'>
           <h5> <%= comment.author.name%></h5>
           <p><%= comment.text%> </p>
+          <%= render "manage_comment" %>
         </li>
       <% end %>
     </ul>

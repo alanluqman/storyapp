@@ -1,4 +1,5 @@
 <div class = 'container'>
+<%= render 'nav'%>
   <h1 class = 'page_title'>User Details</h1>
   <div class = 'user_container'>
     <img class = 'user_profile' src= '<%= @user.photo %>' alt='photo comes here' width="100" height="100" />
@@ -11,7 +12,9 @@
     <h4> Bio </h4>
     <p><%= @user.bio %></p>
   </div>
-  <%= link_to "Add New Post", "/users/#{@user.id}/posts/new", {:class => "see_all_post"}%>
+   <% if current_user == @user %>
+    <%= link_to "Create New Post", new_user_post_path(@user.id) , class: "see_all_post" %>
+   <% end %>
   <h4>Recent posts </h4>
     <% if @user.post_counter > 0 %>
       <% @posts = Post.where(user_id: @user.id) %> 
@@ -26,7 +29,7 @@
             </li>
         <% end %>
       </ul>
-        <%= link_to "See all Posts", user_posts_path(@user), {:class => "see_all_post"}%>
+        <%= link_to "See all Posts", posts_user_path(@user), {:class => "see_all_post"}%>
 
     <% else %>
       <p>The list is empty for the posts by the user</p>
